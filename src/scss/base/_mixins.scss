@@ -1,0 +1,48 @@
+@use 'variables' as v;
+
+@mixin xsmall {
+  @media(min-width: v.$xsmall){
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media(min-width: v.$mobile){
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media(min-width: v.$tablet){
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media(min-width: v.$desktop){
+    @content;
+  }
+}
+
+@mixin desktopxl {
+  @media(min-width: v.$desktopxl){
+    @content;
+  }
+}
+
+@mixin grid($col,$gap) {
+  display: grid;
+  grid-template-columns: repeat($col,1fr);
+  gap: $gap;
+}
+
+@mixin btn($color,$bgColor) {
+  color: $color;
+  background-color: $bgColor;
+  padding: 1.2rem 2rem;
+  border-radius: 69rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-align: center;
+  border: 1px solid transparent;
+}

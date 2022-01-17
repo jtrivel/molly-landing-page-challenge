@@ -1,0 +1,70 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m; 
+
+.about {
+  padding: 5rem 0;
+
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+  }
+
+  &__grid {
+    @include m.grid(1,4rem);
+    @include m.tablet { 
+      @include m.grid(2,4rem);
+      justify-items: center;
+  }
+
+    @include m.desktopxl { 
+      @include m.grid(4,2rem);
+    }
+  }
+
+}
+
+.member {
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  @include m.tablet { 
+    max-width: 60rem;
+  }
+
+
+  &__top{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: v.$primaryColor;
+    color: v.$white;
+  }
+
+  &__img {
+    width: 100%;
+    object-fit: cover;
+    aspect-ratio: 1;
+  }
+
+  &__name {
+    font-size: 2.5rem;
+    font-weight: 600;
+
+  }
+
+  &__position {
+      font-style: italic;
+      color: v.$secondaryColor;
+      font-size: 1.4rem;;
+  }
+
+  &__description {
+
+  }
+
+}

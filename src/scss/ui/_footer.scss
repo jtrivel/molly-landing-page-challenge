@@ -1,0 +1,67 @@
+@use "../base/variables" as v;
+@use "../base/mixins" as m;
+
+.footer {
+  padding: 10rem 0;
+  background-color: v.$darkerBlue;
+  
+  &__box {
+    color: v.$white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    text-align: center;
+  }
+
+  &__header {
+    font-size: 2rem;
+  }
+
+  &__text {
+    font-size: 2rem;
+    &:not(:last-child){
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__socials {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  &__icon {
+    width: 3rem;
+    height: 3rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: v.$darkerBlue;
+    z-index: 1;
+    &::after {
+      position: absolute;
+      content: "";
+      width: 3rem;
+      height: 3rem;
+      border: 1px solid v.$white;
+      border-radius: 50%;
+      background-color: v.$white;
+      z-index: -1;
+    }
+  }
+
+  &__attribution {
+    font-size: 1.4rem;
+  }
+
+  &__link {
+    display: inline-block;
+    color: v.$secondaryColor;
+    text-decoration: none;
+  }
+}

@@ -1,0 +1,124 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+.nav {
+  padding: 2rem 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  @include m.tablet { 
+    padding: 0;
+  }
+
+
+  &__box {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 1rem;
+    width: 100%;
+    background-color: v.$white;
+    
+    @include m.tablet { 
+      justify-content: center;
+      gap: 2em;
+      top: 0rem;
+      left: 0;
+      right: 0;
+      position: fixed;
+      padding: 4rem;
+      z-index: 20000;
+    }
+    @include m.desktop{
+      max-width: none;
+      width: 100%;
+      gap: 8rem;
+    }
+  }
+
+
+  
+  &__link {
+    text-decoration: none;
+    color: v.$darkerBlue;
+    text-transform: uppercase;
+    font-weight: 600;
+
+    &-m{
+      display: none;
+      @include m.tablet { 
+        display: block;
+        transition: all 250ms ease;
+        &:hover{
+          color: v.$secondaryColor;
+        }
+      }
+    }
+  }
+
+
+  &__burger {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__icon {
+    cursor: pointer;
+    font-size: 3rem;
+    font-weight: 300;
+    color: v.$darkerBlue;
+    @include m.tablet { 
+      display: none;  
+    }
+  }
+
+  #check {
+    display: none;
+  }
+
+  &__menu {
+    position: fixed;
+    top: 10rem;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem;
+    background-color: v.$white;
+    border: 1px solid v.$primaryColor;
+    border-width: 0 0 1px 0;
+    transform: translateY(-50rem) ;
+    transition: all 250ms ease;
+
+    @include m.tablet { 
+      position: relative;
+      top: 0;
+      padding: 0;
+      transition: none;
+      transform: none;
+      display: none;
+      background-color: transparent;
+    }
+
+  }
+
+  #check:checked ~ &__menu {
+    transform: translateY(0rem) ;
+  }
+
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    text-align: center;
+  }
+
+
+}

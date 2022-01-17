@@ -1,0 +1,105 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+
+.wemake {
+  padding: 5rem 0;
+  background: linear-gradient( to bottom, v.$blueTransparent, v.$blueTransparent) ,
+  url(../img/services_background.png);
+  background-repeat: repeat , no-repeat;
+  background-size: cover , cover;
+  color: v.$white;
+
+  &__grid {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    gap: 10rem;
+    @include m.desktop { 
+      flex-direction: row;
+      gap: 4rem;
+    }
+  }
+
+  &__image {
+    @include m.desktop { 
+      flex: 1; 
+      position: relative;
+      margin-bottom: -10rem;
+    }
+  }
+
+  &__svg {
+    @include m.desktop {
+      height: 100%;
+      margin-inline: auto;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6rem;
+
+    @include m.desktop { 
+      align-items: flex-start;
+      flex: 1;
+    }
+  }
+
+  &__heading {
+    font-weight: 600;
+    color: v.$secondaryColor;
+    text-align: center;
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    @include m.desktop { 
+      text-align: left;
+    }
+  }
+
+  &__text {
+    text-align: center;
+    @include m.tablet { 
+      max-width: 76.8rem;
+      @include m.desktop { 
+        text-align: left;
+        max-width: none;
+      }
+    }
+  }
+
+  &__ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    @include m.desktop { 
+      padding-left: 10%;
+    }
+  }
+
+  &__li {
+    text-transform: uppercase;
+    position: relative;
+
+    &::before{
+      position: absolute;
+      content: "";
+      background: url(../img/svg/circle_plus.svg);
+      background-repeat: no-repeat;
+      width: 2rem;
+      height: 2rem;
+      top: 50%;
+      left: -20%;
+      transform: translate(-50%,-50%);
+
+    }
+  }
+
+}

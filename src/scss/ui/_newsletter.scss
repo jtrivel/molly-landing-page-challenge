@@ -1,0 +1,57 @@
+@use "../base/variables" as v;
+@use "../base/mixins" as m;
+
+.newsletter {
+  padding: 5rem 0;
+  background-color: v.$secondaryColor;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    max-width: 48rem;
+    @include m.tablet { 
+      flex-direction: row;
+      max-width: 76.8rem;
+    }
+  }
+
+  &__heading {
+    font-size: 3rem;
+    font-weight: 600;
+    color: v.$white;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  &__input {
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 69rem;
+    width: 80%;
+    border: 1px solid transparent;
+    &:focus{
+      outline: none;
+      border: 1px solid transparent;
+      transition: all .5s ease;
+    }
+
+    &:hover:focus{
+      border: 1px solid v.$primaryColor;
+    }
+    &::placeholder {
+      padding-left: 2rem;
+      font-style: italic;
+    }
+  }
+
+
+  &__submit {
+    @include m.btn(v.$primaryColor,v.$white);
+    border: none;
+    cursor: pointer;
+  }
+}

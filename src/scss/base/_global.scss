@@ -1,0 +1,65 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: v.$primaryFont;
+  color: v.$primaryColor;
+  background-color: v.$white;
+  position: relative;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 140rem;
+  width: 95%;
+  margin-inline: auto;
+}
+
+.title {
+  position: relative;
+  font-size: 5rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: v.$darkerBlue;
+    @include m.tablet { 
+    font-size: 7rem;
+  }
+  &::before{
+    position: absolute;
+    content: "";
+    background-image: url(../img/svg/separator.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 15rem;
+    height: 5rem;
+    bottom: -35%;
+    @include m.tablet { 
+      bottom: -20%;  
+    }
+  }
+}
+
+.text {
+  text-align: center;
+  @include m.tablet { 
+    max-width: 80%;  
+  }
+}
+
+a{ 
+  text-decoration: none;
+}

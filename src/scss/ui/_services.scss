@@ -1,0 +1,84 @@
+@use "../base/variables" as v;
+@use "../base/mixins" as m;
+
+.services {
+  padding: 5rem 0;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+  }
+
+
+  &__grid {
+    margin-top: 10rem;
+      @include m.grid(1,4rem);
+      justify-items: center;
+      @include m.tablet { 
+        @include m.grid(2,2rem);
+      }
+      @include m.desktop {
+        @include m.grid(4,2rem);
+      }
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    max-width: 37.5rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  &__img {
+    position: relative;
+    z-index: 1;
+    &::before {
+      @include m.desktop { 
+        position: absolute;
+        content: "";
+        width: 180%;
+        height: 2px;
+        background-color: v.$secondaryColor ;
+        bottom: 50%;
+        right: -180%;
+        z-index: -1;
+      }
+    }
+  }
+
+  &__name {
+    font-size: 2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: v.$darkerBlue;
+  }
+
+  &__desc {
+    text-align: center;
+    max-width: 80%;
+  }
+
+  &__cta {
+    padding: 3rem 0;
+    background-color: v.$secondaryColor;
+    display: flex;
+    align-items: center;
+    justify-content: center
+  }
+
+  &__btn {
+    @include m.btn(v.$secondaryColor,v.$white);
+    transition: all 250ms ease;
+    &:hover{
+      background-color: transparent;
+      border: 1px solid v.$white;
+      color: v.$white;
+    }
+  }
+}
