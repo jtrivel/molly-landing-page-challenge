@@ -2,7 +2,7 @@
 
 ### Links
 
-- Live Site URL: [Live Site URL](https://sparkle-landingpage-challenge0001.netlify.app/)
+- Live Site URL: [Live Site URL](https://molly-landingpage-challenge.netlify.app/)
 
 ### Built with
 - SASS
